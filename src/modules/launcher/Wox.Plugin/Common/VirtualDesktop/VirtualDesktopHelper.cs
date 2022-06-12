@@ -441,7 +441,7 @@ namespace Wox.Plugin.Common.VirtualDesktop.Helper
                 return false;
             }
 
-            int windowDesktopNumber = GetDesktopIdList().IndexOf(windowDesktop);
+            int windowDesktopNumber = GetDesktopIdList().IndexOf(windowDesktop) + 1;
             if (windowDesktopNumber == 1)
             {
                 Log.Error($"VirtualDesktopHelper.MoveWindowOneDesktopLeft() failed when moving the window ({hWindow}) one desktop left: The window is on the first desktop.", typeof(VirtualDesktopHelper));
@@ -472,7 +472,7 @@ namespace Wox.Plugin.Common.VirtualDesktop.Helper
                 return false;
             }
 
-            int windowDesktopNumber = GetDesktopIdList().IndexOf(windowDesktop);
+            int windowDesktopNumber = GetDesktopIdList().IndexOf(windowDesktop) + 1;
             if (windowDesktopNumber == GetDesktopCount())
             {
                 Log.Error($"VirtualDesktopHelper.MoveWindowOneDesktopRight() failed when moving the window ({hWindow}) one desktop right: The window is on the last desktop.", typeof(VirtualDesktopHelper));

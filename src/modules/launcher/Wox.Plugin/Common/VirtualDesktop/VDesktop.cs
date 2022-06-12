@@ -37,7 +37,8 @@ namespace Wox.Plugin.Common.VirtualDesktop.Helper
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the desktop is currently visible to the user
+        /// Gets or sets a value indicating whether the desktop is currently visible to the user.
+        /// Returns true if the desktop is the current desktop or the window is shown on "all desktops".
         /// </summary>
         public bool IsVisible
         {
