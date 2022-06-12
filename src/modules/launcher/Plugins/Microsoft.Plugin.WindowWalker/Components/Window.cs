@@ -248,6 +248,19 @@ namespace Microsoft.Plugin.WindowWalker.Components
         }
 
         /// <summary>
+        /// Move this window the the currently visible desktop and switches to the window
+        /// </summary>
+        internal bool MoveToCurrentDesktop()
+        {
+            if (!desktopInfo.IsVisible && !desktopInfo.IsAllDesktopsView)
+            {
+                return Main.VirtualDesktopHelperInstance.MoveWindowToDesktop(hwnd, Main.VirtualDesktopHelperInstance.GetCurrentDesktopId());
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Converts the window name to string along with the process name
         /// </summary>
         /// <returns>The title of the window</returns>

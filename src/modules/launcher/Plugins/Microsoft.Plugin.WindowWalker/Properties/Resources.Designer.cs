@@ -142,6 +142,15 @@ namespace Microsoft.Plugin.WindowWalker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Move to current desktop.
+        /// </summary>
+        public static string wox_plugin_windowwalker_MoveCurrentDesktop {
+            get {
+                return ResourceManager.GetString("wox_plugin_windowwalker_MoveCurrentDesktop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No..
         /// </summary>
         public static string wox_plugin_windowwalker_Number {

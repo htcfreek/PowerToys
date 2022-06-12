@@ -67,6 +67,20 @@ namespace Microsoft.Plugin.WindowWalker.Components
                 });
             }
 
+            // Show move to current desktop context menu as first menu, but only if windows is not on the current desktop ar assigned to all desktops
+            if (!windowData.Desktop.IsVisible && !windowData.Desktop.IsAllDesktopsView)
+            {
+                contextMenu.Insert(0, new ContextMenuResult
+                {
+                    AcceleratorKey = Key.D,
+                    AcceleratorModifiers = ModifierKeys.Control,
+                    FontFamily = "Segoe MDL2 Assets",
+                    Glyph = "\xE8A0",                       // E8A0 => Symbol: Open Pane
+                    Title = $"{Resources.wox_plugin_windowwalker_MoveCurrentDesktop} (Ctrl+D)",
+                    Action = _ => windowData.MoveToCurrentDesktop(),
+                });
+            }
+
             return contextMenu;
         }
 
